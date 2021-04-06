@@ -3,6 +3,7 @@ import Layout from '../components/Layout'
 import Products from '../components/Products/Products';
 import Navbar from '../components/Navbar/Navbar';
 import {commerce} from '../lib/commerce';
+import Banner from '../components/Banner/Banner';
 
 export default function Home() {
   const [products, setProducts] = useState([]);
@@ -33,7 +34,7 @@ export default function Home() {
     <>
     <Navbar total={cart.total_items}/>
     <Layout>
-      <h1>E-shop</h1>
+      <Banner />
       <Products products={products} onAddToCart={handleAddCart}/>
     </Layout>
     </>

@@ -7,7 +7,7 @@ const Navbar = ({total}) => {
     return (
         <div>
             <AppBar position='fixed' className={styles.appbar}>
-                <Toolbar >
+                <Toolbar className={styles.nav}>
                     <Typography variant='h6' className={styles.title}>
                         <img className={styles.image} src='../img/logo.png' alt='Eshop' height={25}/>
                         Eshop
