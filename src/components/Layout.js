@@ -6,35 +6,19 @@ import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import EmailIcon from '@material-ui/icons/Email';
 import Link from 'next/link';
 import Navbar from '../components/Navbar/Navbar';
-import {commerce} from '../lib/commerce';
 
-const Layout = ({children, title='E-Shop'}) => {
-    const [products, setProducts] = useState([]);
-
-    const fetchProducts = async () => {
-        const {data} = await commerce.products.list();
-        setProducts(data)
-    }
-
-    useEffect(() => {
-        fetchProducts();
-    }, []);
-
-    console.log(products)
+const Layout = ({children}) => {
 
     return (
         <div className={styles.container}>
             <Head>
-                <title>{title}</title>
+                <title>E-shop</title>
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 
             <header className={styles.header}></header>
 
-            
-
             <main className={styles.main} >
-                <Navbar/>
                 {children}
             </main>
 
@@ -60,3 +44,25 @@ const Layout = ({children, title='E-Shop'}) => {
 }
 
 export default Layout
+
+// export const getStaticProps = async () => {
+//     const {products} = await commerce.products.list();
+//     //     setProducts(data)
+  
+//     return {
+//       props: {
+//         products,
+//       }
+//     }
+//   }
+
+// export const getStaticProps = async () => {
+//     const res = await fetch('https://fakestoreapi.com/products');
+//     const products = await res.json();
+  
+//     return {
+//       props: {
+//         products,
+//       }
+//     }
+//   }

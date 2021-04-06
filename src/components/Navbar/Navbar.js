@@ -3,7 +3,7 @@ import {AppBar, Toolbar, IconButton, Badge, MenuItem, Menu, Typography} from '@m
 import {ShoppingCart} from '@material-ui/icons';
 import styles from './Navbar.module.scss';
 
-const Navbar = () => {
+const Navbar = ({total}) => {
     return (
         <div>
             <AppBar position='fixed' className={styles.appbar}>
@@ -15,7 +15,7 @@ const Navbar = () => {
                     <div className={styles.grow}></div>
                     <div className={styles.button}>
                         <IconButton aria-label='Show cart items'>
-                            <Badge badgeContent={2}>
+                            <Badge badgeContent={total}>
                                 <ShoppingCart/>
                             </Badge>
                         </IconButton>

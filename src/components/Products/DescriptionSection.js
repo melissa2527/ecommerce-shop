@@ -10,12 +10,10 @@ const DescriptionSection = ({description}) => {
     }
     return (
         <div>
-            Description
+            Description: 
             <ArrowDropDownCircleIcon onClick={toggleShowDescription}/>
             {showDescription ? 
-                <Typography variant='body2'>
-                    {description}
-                </Typography>
+                <Typography variant='body2' dangerouslySetInnerHTML={{__html: description}}/>
                 : null
             } 
         </div>
