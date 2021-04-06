@@ -2,6 +2,7 @@ import React from 'react';
 import Layout from '../components/Layout'
 import Products from '../components/Products/Products';
 
+
 export default function Home({products}) {
   console.log(products)
   return (

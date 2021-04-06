@@ -1,12 +1,27 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import Head from 'next/head';
 import styles from './Layout.module.scss';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import EmailIcon from '@material-ui/icons/Email';
 import Link from 'next/link';
+import Navbar from '../components/Navbar/Navbar';
+import {commerce} from '../lib/commerce';
 
 const Layout = ({children, title='E-Shop'}) => {
+    const [products, setProducts] = useState([]);
+
+    const fetchProducts = async () => {
+        const {data} = await commerce.products.list();
+        setProducts(data)
+    }
+
+    useEffect(() => {
+        fetchProducts();
+    }, []);
+
+    console.log(products)
+
     return (
         <div className={styles.container}>
             <Head>
@@ -19,6 +34,7 @@ const Layout = ({children, title='E-Shop'}) => {
             
 
             <main className={styles.main} >
+                <Navbar/>
                 {children}
             </main>
 

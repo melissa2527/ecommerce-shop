@@ -1,0 +1,20 @@
+.appbar {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    // background-color: rgb(185, 174, 243)
+}
+
+.title {
+    flex-grow: 1;
+    align-items: center;
+    display: flex;
+    text-decoration: none;
+}
+
+.image {
+    margin-right: 0.5rem;
+}
+
+
+.grow {
+    flex-grow: 1;
+}
